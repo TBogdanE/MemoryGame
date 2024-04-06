@@ -1,3 +1,73 @@
 body {
-  background-color: red;
+  margin: 0;
+}
+
+#root {
+  display: grid;
+  grid-template-columns: repeat(30, 1fr);
+  grid-template-rows: repeat(30, 1fr);
+  height: 100vh;
+  background-image: url(../assets/scooby-background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+#header {
+  grid-area: 1 / 1 / 4 / 31;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 3em;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  color: rgb(205, 255, 24);
+}
+
+#start-game-menu {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  grid-area: 8 / 6 / 22 / 26;
+  backdrop-filter: blur(20px);
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  border: 0.1em solid rgb(154, 167, 37);
+  border-radius: 10px;
+  box-shadow: 4px 3px 3px rgba(65, 138, 16, 0.12),
+    2px 4px 6px rgba(5, 5, 0, 0.24); /* Base shadow */
+  transition: transform 0.3s ease; /* Add transition for smoothness */
+  overflow: hidden;
+}
+
+#start-game-title {
+  color: rgb(205, 255, 24);
+  font-size: 2em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  padding: 0.5em;
+}
+
+#start-game-difficulty-menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  width: 60%;
+}
+
+.start-game-difficulty {
+  color: rgb(205, 255, 24);
+  font-size: 1.5em;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-color: transparent;
+  border: 0;
+  padding: 3em;
+  transition: 0.2s ease-in-out;
+}
+
+.start-game-difficulty:hover {
+  scale: 1.2;
+  color: rgb(93, 170, 201);
 }
