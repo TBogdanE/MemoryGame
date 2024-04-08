@@ -22,8 +22,8 @@ export default function GameBoard({ difficulty }) {
 
   return (
     <div id="gameboard">
-      {cards.map((card, id) => (
-        <Card key={id} name={card.name} image={card.imgUrl} />
+      {cards.map((card) => (
+        <Card id={card.id} name={card.name} image={card.imgUrl} />
       ))}
     </div>
   );

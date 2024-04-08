@@ -6,7 +6,7 @@ class Cards {
     this.wasClicked = false;
   }
   click() {
-    this.wasClicked = !this.wasClicked;
+    this.wasClicked = true;
   }
 }
 
