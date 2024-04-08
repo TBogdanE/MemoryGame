@@ -14,6 +14,10 @@ export default function StartGameMenu() {
     if (score === gameDifficulty) {
       setWin(true);
       setGameDifficulty(null);
+      setTimeout(() => {
+        setWin(false);
+        setShowMenu(true);
+      }, 4000);
     }
   }, [score]);
 
