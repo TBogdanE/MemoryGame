@@ -1,23 +1,13 @@
-import { allCards } from "../js/cards";
+import { cardList } from "../js/cards";
+import shuffleArray from "../js/shuffleArray";
 
-export default function Card({ id, name, image }) {
+export default function Card({ id, name, image, onClick }) {
   return (
-    <div
-      className="gameboard-card"
-      onClick={() => {
-        handleCardClick(id);
-      }}
-    >
+    <div className="gameboard-card" onClick={onClick}>
       <div className="gameboard-card-image-container">
         <img src={image} className="gameboard-card-image"></img>
       </div>
       <div className="gameboard-card-name">{name}</div>
     </div>
   );
-}
-
-function handleCardClick(id) {
-  const element = allCards.find((obj) => obj.id === id);
-  //if (element.wasClicked) { resetGame()};
-  element.click();
 }
