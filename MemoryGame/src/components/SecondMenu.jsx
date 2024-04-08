@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { SCORE } from "../js/game";
 import { cardList } from "../js/cards";
 
-export default function SecondMenu({ score, setMenu, setDifficulty }) {
+export default function SecondMenu({
+  score,
+  updateScore,
+  setMenu,
+  setDifficulty,
+}) {
   const actualScore = () => {
     let count = 0;
     cardList.forEach((obj) => {

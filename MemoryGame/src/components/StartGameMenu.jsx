@@ -37,6 +37,7 @@ export default function StartGameMenu() {
           />
           <SecondMenu
             score={score}
+            updateScore={updateScore}
             setMenu={setShowMenu}
             setDifficulty={setGameDifficulty}
           />
