@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GameBoard from "./GameBoard";
 import SecondMenu from "./SecondMenu";
-import { SCORE } from "../js/game";
+import WinMenu from "./WinMenu";
 
 export default function StartGameMenu() {
   const [showMenu, setShowMenu] = useState(true);
   const [gameDifficulty, setGameDifficulty] = useState(null);
+  const [score, updateScore] = useState(0);
+  const [isWin, setWin] = useState(false);
 
-  const [score, updateScore] = useState(SCORE);
+  useEffect(() => {
+    if (score === gameDifficulty) {
+      setWin(true);
+      setGameDifficulty(null);
+    }
+  }, [score]);
 
   const startGame = (difficulty) => {
     setGameDifficulty(difficulty);
@@ -41,6 +48,7 @@ export default function StartGameMenu() {
           </div>
         </div>
       )}
+      {isWin && <WinMenu />}
       {gameDifficulty && (
         <>
           <GameBoard
