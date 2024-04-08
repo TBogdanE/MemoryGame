@@ -3,7 +3,13 @@ import Card from "./Cards";
 import { useState, useEffect } from "react";
 import shuffleArray from "../js/shuffleArray";
 
-export default function GameBoard({ difficulty }) {
+export default function GameBoard({
+  difficulty,
+  score,
+  updateScore,
+  setMenu,
+  setDifficulty,
+}) {
   const [cards, setCards] = useState([]);
 
   useEffect(() => {
@@ -12,14 +18,23 @@ export default function GameBoard({ difficulty }) {
     setCards(selectedCards);
   }, [difficulty]);
 
-  function handleCardClick(id) {
+  const handleCardClick = (id) => {
     const element = cardList.find((obj) => obj.id === id);
-    //if (element.wasClicked) { resetGame(); return;};
+    if (element.wasClicked) {
+      setMenu(true);
+      setDifficulty(null);
+      updateScore(0);
+      cardList.forEach((obj) => {
+        if (obj.wasClicked === true) obj.wasClicked = false;
+      });
+      return;
+    }
+
     element.click();
+    updateScore(score + 1);
     const shuffleCards = shuffleArray(cards);
     setCards(shuffleCards);
-    console.log(cards);
-  }
+  };
 
   return (
     <div id="gameboard">

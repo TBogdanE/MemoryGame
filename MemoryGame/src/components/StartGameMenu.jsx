@@ -1,8 +1,13 @@
 import { useState } from "react";
+import GameBoard from "./GameBoard";
+import SecondMenu from "./SecondMenu";
+import { SCORE } from "../js/game";
 
 export default function StartGameMenu() {
   const [showMenu, setShowMenu] = useState(true);
   const [gameDifficulty, setGameDifficulty] = useState(null);
+
+  const [score, updateScore] = useState(SCORE);
 
   const startGame = (difficulty) => {
     setGameDifficulty(difficulty);
@@ -36,7 +41,22 @@ export default function StartGameMenu() {
           </div>
         </div>
       )}
-      {gameDifficulty && <GameBoard difficulty={gameDifficulty} />}
+      {gameDifficulty && (
+        <>
+          <GameBoard
+            difficulty={gameDifficulty}
+            score={score}
+            updateScore={updateScore}
+            setMenu={setShowMenu}
+            setDifficulty={setGameDifficulty}
+          />
+          <SecondMenu
+            score={score}
+            setMenu={setShowMenu}
+            setDifficulty={setGameDifficulty}
+          />
+        </>
+      )}
     </>
   );
 }
