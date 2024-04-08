@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import GameBoard from "./GameBoard";
 import SecondMenu from "./SecondMenu";
 import WinMenu from "./WinMenu";
+import DifficultyStartMenu from "./SelectDifficultyMenu";
 
 export default function StartGameMenu() {
   const [showMenu, setShowMenu] = useState(true);
@@ -23,31 +24,7 @@ export default function StartGameMenu() {
 
   return (
     <>
-      {showMenu && (
-        <div id="start-game-menu">
-          <div id="start-game-title">Start Game</div>
-          <div id="start-game-difficulty-menu">
-            <button
-              className="start-game-difficulty"
-              onClick={() => startGame(4)}
-            >
-              Easy
-            </button>
-            <button
-              className="start-game-difficulty"
-              onClick={() => startGame(6)}
-            >
-              Medium
-            </button>
-            <button
-              className="start-game-difficulty"
-              onClick={() => startGame(8)}
-            >
-              Hard
-            </button>
-          </div>
-        </div>
-      )}
+      {showMenu && <DifficultyStartMenu startGame={startGame} />}
       {isWin && <WinMenu />}
       {gameDifficulty && (
         <>
