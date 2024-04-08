@@ -51,7 +51,7 @@ const ghostHeadless = new Cards(
   " https://th.bing.com/th/id/OIP.mEZJ9Ft4BWBIyVjGlSS7FwHaMZ?rs=1&pid=ImgDetMain"
 );
 
-const allCards = [
+const cardList = [
   scooby,
   shaggy,
   fred,
@@ -62,4 +62,4 @@ const allCards = [
   ghostHeadless,
 ];
 
-export { allCards };
+export { cardList };

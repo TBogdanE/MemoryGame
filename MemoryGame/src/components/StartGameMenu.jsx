@@ -9,6 +9,7 @@ export default function StartGameMenu() {
   const [gameDifficulty, setGameDifficulty] = useState(null);
   const [score, updateScore] = useState(0);
   const [isWin, setWin] = useState(false);
+  const [isLose, setLose] = useState(false);
 
   useEffect(() => {
     if (score === gameDifficulty) {

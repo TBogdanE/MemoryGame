@@ -20,7 +20,7 @@ body {
   align-items: center;
   text-align: center;
   font-size: 3em;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-family: fantasy;
   color: rgb(205, 255, 24);
 }
 
@@ -37,7 +37,7 @@ body {
   border: 0.1em solid rgb(154, 167, 37);
   border-radius: 10px;
   box-shadow: 4px 3px 3px rgba(65, 138, 16, 0.12),
-    2px 4px 6px rgba(5, 5, 0, 0.24);
+    2px 2px 6px rgba(5, 5, 0, 0.24);
   transition: transform 0.3s ease;
   overflow: hidden;
 }
@@ -77,6 +77,7 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   grid-area: 5 / 3 / 28 / 28;
   backdrop-filter: blur(30px);
   background-color: rgb(93, 170, 201, 0.5);
@@ -94,6 +95,13 @@ body {
   border-radius: 20px;
   width: 20%;
   height: 20em;
+  transition: 0.2s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.gameboard-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .gameboard-card-image-container {
@@ -101,8 +109,14 @@ body {
   width: 10em;
   background-color: white;
   border-radius: 10px;
+  border: 0;
   overflow: hidden;
   padding: 0.5em;
+  transition: 0.1s ease-in-out;
+}
+
+.gameboard-card:hover .gameboard-card-image-container {
+  border: 0.2em solid rgb(245, 149, 24);
 }
 
 .gameboard-card-image {
@@ -114,5 +128,45 @@ body {
 .gameboard-card-name {
   font-size: 1.3em;
   color: rgb(93, 170, 201);
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  transition: 0.2s ease-in-out;
+}
+
+.gameboard-card:hover .gameboard-card-name {
+  color: rgb(245, 149, 24);
+  scale: 1.1;
+}
+
+#second-menu {
+  grid-area: 29/11/30/20;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  border: 0.3em solid rgb(205, 255, 24, 0.8);
+  border-radius: 20px;
+}
+
+#score-sct {
+  color: rgb(205, 255, 24);
+}
+
+#restart-game-btn {
+  color: rgb(93, 170, 201);
+  background-color: rgb(205, 255, 24, 0.8);
+  border: 0;
+  border-radius: 8px;
+  width: 30%;
+  transition: 0.2s ease-in-out;
+}
+
+#restart-game-btn:hover {
+  background-color: rgb(93, 170, 201);
+  color: rgb(205, 255, 24, 0.8);
+}
+
+#won-menu-sct {
+  color: rgb(205, 255, 24);
+  font-size: 3em;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }

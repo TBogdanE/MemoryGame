@@ -7,13 +7,6 @@ export default function SecondMenu({
   setMenu,
   setDifficulty,
 }) {
-  const actualScore = () => {
-    let count = 0;
-    cardList.forEach((obj) => {
-      if (obj.wasClicked === true) count += 1;
-    });
-  };
-
   const handleResetBtn = () => {
     setMenu(true);
     setDifficulty(null);

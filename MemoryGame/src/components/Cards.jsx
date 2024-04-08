@@ -1,6 +1,3 @@
-import { cardList } from "../js/cards";
-import shuffleArray from "../js/shuffleArray";
-
 export default function Card({ id, name, image, onClick }) {
   return (
     <div className="gameboard-card" onClick={onClick}>
